@@ -8,10 +8,22 @@ fn repeat_char(ch: char, n: i32) -> String {
     result
 }
 
-fn main() {
-    let paths = fs::read_dir("./").unwrap();
-    for path in paths {
-        println!("{} {}", repeat_char('-', 3), path.unwrap().file_name().into_string().unwrap());
+fn print_dir(path: &str, padding: i32) {
+    let inner_paths = fs::read_dir(path).unwrap();
+    for path in inner_paths {
+        let entry = path.unwrap();
+        let file_name = entry.file_name().into_string().unwrap();
+        let file_type = entry.file_type().unwrap();
+        if file_type.is_dir() {
+            let file_path = entry.path();
+            print_dir(file_path.to_str().unwrap(), padding + 2);
+        } else {
+            println!("{} {}", repeat_char('-', padding), file_name);
+        }
     }
-    println!("Hello, world!");
+
+}
+
+fn main() {
+    print_dir("./", 2);
 }

@@ -1,4 +1,5 @@
 use std::fs;
+use colored::*;
 
 pub fn repeat_char(ch: char, n: i32) -> String {
     let mut result = String::new();
@@ -15,12 +16,11 @@ pub fn print_dir(path: &str, padding: i32) {
         let entry = path.unwrap();
         let file_name = entry.file_name().into_string().unwrap();
         let file_type = entry.file_type().unwrap();
-        println!("{} {}", repeat_char('-', padding), file_name);
         if file_type.is_dir() {
             let file_path = entry.path();
+            println!("{} {}", repeat_char('-', padding), file_name.green());
             print_dir(file_path.to_str().unwrap(), padding + 2);
         } 
-    
-
+        println!("{} {}", repeat_char('-', padding), file_name.blue());
     }
 }

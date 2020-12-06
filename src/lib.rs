@@ -18,9 +18,9 @@ pub fn print_dir(path: &str, padding: i32) {
         let file_type = entry.file_type().unwrap();
         if file_type.is_dir() {
             let file_path = entry.path();
-            println!("{} {}", repeat_char('-', padding), file_name.green());
+            println!("{} {}", repeat_char('─', padding), file_name.green());
             print_dir(file_path.to_str().unwrap(), padding + 2);
         } 
-        println!("{} {}", repeat_char('-', padding), file_name.blue());
+        println!("{} {}", repeat_char('─', padding), file_name.blue());
     }
 }

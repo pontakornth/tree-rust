@@ -25,7 +25,8 @@ pub fn print_dir(path: &str, padding: i32, current_depth: i32, max_depth: i32) {
             let file_path = entry.path();
             println!("├{} {}", repeat_char('─', padding), file_name.green());
             print_dir(file_path.to_str().unwrap(), padding + 4, current_depth +1, max_depth);
-        } 
-        println!("├{} {}", repeat_char('─', padding), file_name.blue());
+        } else {
+            println!("├{} {}", repeat_char('─', padding), file_name.blue());
+        }
     }
 }

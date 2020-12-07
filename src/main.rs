@@ -20,5 +20,5 @@ fn main() {
     // TODO: Better error handling
     let path = matches.value_of("path").unwrap();
     let max_depth = matches.value_of("depth").unwrap().parse::<i32>().unwrap();
-    print_dir(path, 2, 1, max_depth);
+    print_dir(path, 0, 1, max_depth);
 }

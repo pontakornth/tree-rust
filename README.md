@@ -6,6 +6,9 @@ Currently, it will print only current directory without error handling.
 
 Plan
 
-- [ ] Basic Printing
-- [ ] Accept command arguement
-- [ ] Color
+- [x] Basic Printing
+- [x] Accept command arguement
+    - [x] Depth
+- [x] Color
+- [ ] Natural-looking tree (Don't need to look like actual tree command)
+- [ ] Documentation

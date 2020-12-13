@@ -10,5 +10,5 @@ Plan
 - [x] Accept command arguement
     - [x] Depth
 - [x] Color
-- [ ] Natural-looking tree (Don't need to look like actual tree command)
+- [x] Natural-looking tree (Don't need to look like actual tree command)
 - [ ] Documentation
